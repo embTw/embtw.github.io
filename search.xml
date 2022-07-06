@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/04/02/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hellohexo</title>
+    <url>/2022/04/02/hellohexo/</url>
+    <content><![CDATA[<p>我的第一个hexo博客，今后选择将我学习的内容放到这里，一方面方便我自己整理知识点，一方面可以向他人输出进一步巩固学习。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>操作系统实验M1-打印进程树</title>
+    <url>/2022/07/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8CM1-%E6%89%93%E5%8D%B0%E8%BF%9B%E7%A8%8B%E6%A0%91/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>作为一个计算机专业的学生，虽说已经学习了几门主流的编程语言，学习了计算机的基础课程，但一提到写程序便没有头绪，完全不知该在哪里入手，比如你知道浏览器是怎样实现的吗？游戏修改器是怎么做的？一直以来我都为编写程序而苦恼。</p>
+<p>实际上，我们编写的程序大部分都是运行在操作系统上的，那么我们的程序就必然受制于操作系统，如果我们对操作系统没有足够的了解就不可能随心所欲地编写出自己的程序。鉴于此，我搜集了网上关于学习操作系统的各类资料，终于我在b站上发现了蒋炎岩老师的<a href="http://jyywiki.cn/OS/2022/">操作系统课程</a>。</p>
+<p>蒋老师的操作系统课程可以说是干货满满，从他对linux命令行信手拈来的使用以及对操作系统独到的理解就可以看出他完全有别于其他老师，在当今重理论轻实践的教学环境下蒋炎岩老师推出的这一门实践课程可谓是难能可贵，不需要死记硬背枯燥的操作系统概念，只需要轻轻翘起手指在键盘上飞舞，便能切实体会到操作系统的精妙之处。</p>
+<p>纸上得来终觉浅，绝知此事要躬行。学习操作系统的目的是以后将操作系统的知识运用到实际工作中的，敲代码是可不缺少的一环，在敲代码的过程中会浮现出很多原本没有想到的问题，一一攻克后才能对操作系统有更深入的理解。</p>
+<span id="more"></span>
+
+<h1 id="M1-打印进程树-pstree"><a href="#M1-打印进程树-pstree" class="headerlink" title="M1:打印进程树(pstree)"></a>M1:打印进程树(pstree)</h1><h2 id="实验描述"><a href="#实验描述" class="headerlink" title="实验描述"></a>实验描述</h2><blockquote>
+<p>实验要求: <strong>实现pstree打印进程之间的树状的父子关系</strong></p>
+<blockquote>
+<p>Linux 系统中可以同时运行多个程序。运行的程序称为进程。除了所有进程的根之外，每个进程都有它唯一的父进程，你的任务就是把这棵树在命令行中输出。</p>
+</blockquote>
+</blockquote>
+<h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pstree [OPTION]…</span><br></pre></td></tr></table></figure>
+<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>把系统中的进程按照父亲-孩子的树状结构打印到终端。</p>
+<ul>
+<li>-p, –show-pids: 打印每个进程的进程号。</li>
+<li>-n –numeric-sort: 按照pid的数值从小到大顺序输出一个进程的直接孩子。</li>
+<li>-V –version: 打印版本信息。</li>
+</ul>
+<p>你可以在命令行中观察系统的 pstree 的执行行为 (如执行 pstree -V、pstree –show-pids 等)。这些参数可能任意组合，但你不需要处理单字母参数合并的情况，例如 -np。</p>
+<h2 id="正确性标准"><a href="#正确性标准" class="headerlink" title="正确性标准"></a>正确性标准</h2><p>你可以任意选择树的形态，以下输出都是合法的：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./pstree-64</span><br><span class="line">systemd─┬─accounts-daemon─┬─</span><br><span class="line">        │</span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">$ ./pstree-64</span><br><span class="line">systemd</span><br><span class="line"> |</span><br><span class="line"> +--accounts-daemon-</span><br><span class="line"> |</span><br><span class="line"> ...</span><br><span class="line"></span><br><span class="line">$ ./pstree-64</span><br><span class="line">systemd</span><br><span class="line">  accounts-daemon</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>只要输出系统中的进程即可；此外，允许进程列表有轻微出入。细心的同学可能发现你第一个版本的 pstree 可能和系统输出不太一样。在线评测会容忍你输出的一些缺陷；此外，作为第一个实验，我们会手下留情，没有非常强劲的测试数据。但你仍然需要确保：</p>
+<ol>
+<li>正确列出系统中的进程，并正确实现参数组合的行为；</li>
+<li>编写可移植的代码。我们会同时测试 32-bit 和 64-bit 的版本。</li>
+</ol>
+<h2 id="实验实现"><a href="#实验实现" class="headerlink" title="实验实现"></a>实验实现</h2><p><img src="/images/pstree.png" alt="pstree"></p>
+]]></content>
+      <categories>
+        <category>操作系统实验</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>操作系统实验</title>
+    <url>/2022/07/06/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AE%9E%E9%AA%8C/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+</search>
